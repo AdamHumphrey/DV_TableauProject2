@@ -1,0 +1,641 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<workbook source-platform='win' version='8.3' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <!-- build 8300.15.0219.2230                                -->
+  <preferences>
+  </preferences>
+  <datasources>
+    <datasource caption='AIRCRAFT_REVISED+ (C##CS329E_DAS3734)' inline='true' name='oracle.42106.767916469908' version='8.3'>
+      <connection authentication='RDBMS' class='oracle' port='1521' schema='C##CS329E_DAS3734' server='129.152.144.84' service='ORCL.usuniversi01134.oraclecloud.internal' username='C##cs329e_das3734'>
+        <relation join='full' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[AIRCRAFT_REVISED].[SERIAL_ID]'>
+              </expression>
+              <expression op='[AMMO_REVISED].[AMMO_SERIAL_ID]'>
+              </expression>
+            </expression>
+          </clause>
+          <relation join='full' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[AIRCRAFT_REVISED].[SERIAL_ID]'>
+                </expression>
+                <expression op='[ARTICLELEATHER_REVISED].[AL_SERIAL_ID]'>
+                </expression>
+              </expression>
+            </clause>
+            <relation name='AIRCRAFT_REVISED' table='[C##CS329E_DAS3734].[AIRCRAFT_REVISED]' type='table' />
+            <relation name='ARTICLELEATHER_REVISED' table='[C##CS329E_DAS3734].[ARTICLELEATHER_REVISED]' type='table' />
+          </relation>
+          <relation name='AMMO_REVISED' table='[C##CS329E_DAS3734].[AMMO_REVISED]' type='table' />
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>AIRCRAFT_COUNTRY_AREA</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AIRCRAFT_COUNTRY_AREA]</local-name>
+            <parent-name>[AIRCRAFT_REVISED]</parent-name>
+            <remote-alias>AIRCRAFT_COUNTRY_AREA</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>60</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AIRCRAFT_YEAR</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[AIRCRAFT_YEAR]</local-name>
+            <parent-name>[AIRCRAFT_REVISED]</parent-name>
+            <remote-alias>AIRCRAFT_YEAR</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AIRCRAFT_COMM_CODE</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[AIRCRAFT_COMM_CODE]</local-name>
+            <parent-name>[AIRCRAFT_REVISED]</parent-name>
+            <remote-alias>AIRCRAFT_COMM_CODE</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AIRCRAFT_COMMODITY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AIRCRAFT_COMMODITY]</local-name>
+            <parent-name>[AIRCRAFT_REVISED]</parent-name>
+            <remote-alias>AIRCRAFT_COMMODITY</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>200</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AIRCRAFT_FLOW</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AIRCRAFT_FLOW]</local-name>
+            <parent-name>[AIRCRAFT_REVISED]</parent-name>
+            <remote-alias>AIRCRAFT_FLOW</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>60</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AIRCRAFT_TRADE_USD</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AIRCRAFT_TRADE_USD]</local-name>
+            <parent-name>[AIRCRAFT_REVISED]</parent-name>
+            <remote-alias>AIRCRAFT_TRADE_USD</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AIRCRAFT_WEIGHT</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[AIRCRAFT_WEIGHT]</local-name>
+            <parent-name>[AIRCRAFT_REVISED]</parent-name>
+            <remote-alias>AIRCRAFT_WEIGHT</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AIRFCRAFT_QUANTITY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AIRFCRAFT_QUANTITY]</local-name>
+            <parent-name>[AIRCRAFT_REVISED]</parent-name>
+            <remote-alias>AIRFCRAFT_QUANTITY</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AIRCRAFT_QUANTITY_NAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AIRCRAFT_QUANTITY_NAME]</local-name>
+            <parent-name>[AIRCRAFT_REVISED]</parent-name>
+            <remote-alias>AIRCRAFT_QUANTITY_NAME</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SERIAL_ID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[SERIAL_ID]</local-name>
+            <parent-name>[AIRCRAFT_REVISED]</parent-name>
+            <remote-alias>SERIAL_ID</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AL_COUNTRY_AREA</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AL_COUNTRY_AREA]</local-name>
+            <parent-name>[ARTICLELEATHER_REVISED]</parent-name>
+            <remote-alias>AL_COUNTRY_AREA</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>60</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AL_YEAR</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[AL_YEAR]</local-name>
+            <parent-name>[ARTICLELEATHER_REVISED]</parent-name>
+            <remote-alias>AL_YEAR</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AL_COMM_CODE</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[AL_COMM_CODE]</local-name>
+            <parent-name>[ARTICLELEATHER_REVISED]</parent-name>
+            <remote-alias>AL_COMM_CODE</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AL_COMMODITY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AL_COMMODITY]</local-name>
+            <parent-name>[ARTICLELEATHER_REVISED]</parent-name>
+            <remote-alias>AL_COMMODITY</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>200</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AL_FLOW</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AL_FLOW]</local-name>
+            <parent-name>[ARTICLELEATHER_REVISED]</parent-name>
+            <remote-alias>AL_FLOW</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AL_TRADE_USD</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[AL_TRADE_USD]</local-name>
+            <parent-name>[ARTICLELEATHER_REVISED]</parent-name>
+            <remote-alias>AL_TRADE_USD</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AL_WEIGHT</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[AL_WEIGHT]</local-name>
+            <parent-name>[ARTICLELEATHER_REVISED]</parent-name>
+            <remote-alias>AL_WEIGHT</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AL_QUANTITY_NAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AL_QUANTITY_NAME]</local-name>
+            <parent-name>[ARTICLELEATHER_REVISED]</parent-name>
+            <remote-alias>AL_QUANTITY_NAME</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AL_QUANTITY</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[AL_QUANTITY]</local-name>
+            <parent-name>[ARTICLELEATHER_REVISED]</parent-name>
+            <remote-alias>AL_QUANTITY</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AL_SERIAL_ID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[AL_SERIAL_ID]</local-name>
+            <parent-name>[ARTICLELEATHER_REVISED]</parent-name>
+            <remote-alias>AL_SERIAL_ID</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AMMO_COUNTRY_AREA</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AMMO_COUNTRY_AREA]</local-name>
+            <parent-name>[AMMO_REVISED]</parent-name>
+            <remote-alias>AMMO_COUNTRY_AREA</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>60</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AMMO_YEAR</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[AMMO_YEAR]</local-name>
+            <parent-name>[AMMO_REVISED]</parent-name>
+            <remote-alias>AMMO_YEAR</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AMMO_COMM_CODE</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[AMMO_COMM_CODE]</local-name>
+            <parent-name>[AMMO_REVISED]</parent-name>
+            <remote-alias>AMMO_COMM_CODE</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AMMO_COMMODITY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AMMO_COMMODITY]</local-name>
+            <parent-name>[AMMO_REVISED]</parent-name>
+            <remote-alias>AMMO_COMMODITY</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>200</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AMMO_FLOW</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AMMO_FLOW]</local-name>
+            <parent-name>[AMMO_REVISED]</parent-name>
+            <remote-alias>AMMO_FLOW</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>70</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AMMO_TRADE_USD</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[AMMO_TRADE_USD]</local-name>
+            <parent-name>[AMMO_REVISED]</parent-name>
+            <remote-alias>AMMO_TRADE_USD</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AMMO_WEIGHT</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[AMMO_WEIGHT]</local-name>
+            <parent-name>[AMMO_REVISED]</parent-name>
+            <remote-alias>AMMO_WEIGHT</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AMMO_QUANTITY_NAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AMMO_QUANTITY_NAME]</local-name>
+            <parent-name>[AMMO_REVISED]</parent-name>
+            <remote-alias>AMMO_QUANTITY_NAME</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AMMO_QUANTITY</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[AMMO_QUANTITY]</local-name>
+            <parent-name>[AMMO_REVISED]</parent-name>
+            <remote-alias>AMMO_QUANTITY</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AMMO_SERIAL_ID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[AMMO_SERIAL_ID]</local-name>
+            <parent-name>[AMMO_REVISED]</parent-name>
+            <remote-alias>AMMO_SERIAL_ID</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Aircraft Commodity' datatype='string' name='[AIRCRAFT_COMMODITY]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Aircraft Comm Code' datatype='real' name='[AIRCRAFT_COMM_CODE]' role='dimension' type='ordinal'>
+      </column>
+      <column caption='Aircraft Country Area' datatype='string' name='[AIRCRAFT_COUNTRY_AREA]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal'>
+      </column>
+      <column caption='Aircraft Flow' datatype='string' name='[AIRCRAFT_FLOW]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Aircraft Quantity Name' datatype='string' name='[AIRCRAFT_QUANTITY_NAME]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Aircraft Trade Usd' datatype='string' name='[AIRCRAFT_TRADE_USD]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Aircraft Weight' datatype='real' name='[AIRCRAFT_WEIGHT]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Aircraft Year' datatype='real' name='[AIRCRAFT_YEAR]' role='dimension' type='quantitative'>
+      </column>
+      <column caption='Airfcraft Quantity' datatype='string' name='[AIRFCRAFT_QUANTITY]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Al Commodity' datatype='string' name='[AL_COMMODITY]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Al Comm Code' datatype='real' name='[AL_COMM_CODE]' role='dimension' type='ordinal'>
+      </column>
+      <column caption='Al Country Area' datatype='string' name='[AL_COUNTRY_AREA]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal'>
+      </column>
+      <column caption='Al Flow' datatype='string' name='[AL_FLOW]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Al Quantity' datatype='real' name='[AL_QUANTITY]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Al Quantity Name' datatype='string' name='[AL_QUANTITY_NAME]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Al Serial Id' datatype='real' name='[AL_SERIAL_ID]' role='dimension' type='ordinal'>
+      </column>
+      <column caption='Al Trade Usd' datatype='real' name='[AL_TRADE_USD]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Al Weight' datatype='real' name='[AL_WEIGHT]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Al Year' datatype='real' name='[AL_YEAR]' role='dimension' type='quantitative'>
+      </column>
+      <column caption='Ammo Commodity' datatype='string' name='[AMMO_COMMODITY]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Ammo Comm Code' datatype='real' name='[AMMO_COMM_CODE]' role='dimension' type='ordinal'>
+      </column>
+      <column caption='Ammo Country Area' datatype='string' name='[AMMO_COUNTRY_AREA]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal'>
+      </column>
+      <column caption='Ammo Flow' datatype='string' name='[AMMO_FLOW]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Ammo Quantity' datatype='real' name='[AMMO_QUANTITY]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Ammo Quantity Name' datatype='string' name='[AMMO_QUANTITY_NAME]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Ammo Serial Id' datatype='real' name='[AMMO_SERIAL_ID]' role='dimension' type='ordinal'>
+      </column>
+      <column caption='Ammo Trade Usd' datatype='real' name='[AMMO_TRADE_USD]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Ammo Weight' datatype='real' name='[AMMO_WEIGHT]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Ammo Year' datatype='real' name='[AMMO_YEAR]' role='dimension' type='quantitative'>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Serial Id' datatype='real' name='[SERIAL_ID]' role='dimension' type='ordinal'>
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+          </datasources>
+          <aggregation value='true' />
+        </view>
+        <style>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows></rows>
+        <cols></cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows>
+    <window class='schema' source-height='-1' />
+    <window auto-hidden='0' class='worksheet' maximized='1' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='144' name='Sheet 1' width='174'>
+      iVBORw0KGgoAAAANSUhEUgAAAK4AAACQCAYAAACRfFAzAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAABmUlEQVR4nO3SQQ0AIBDAMMC/58MDH7KkVbDH9szMgpjzOwBeGJck45JkXJKMS5JxSTIu
+      ScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45Jk
+      XJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYl
+      ybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKM
+      S5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgk
+      GZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5Jx
+      STIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck
+      45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuSRePYgUc7kJNEQAAAABJRU5ErkJg
+      gg==
+    </thumbnail>
+  </thumbnails>
+</workbook>

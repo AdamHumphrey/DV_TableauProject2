@@ -1,0 +1,16 @@
+{
+    "contents" : "---\ntitle: \"Project 3 RMD File\"\noutput: html_document\n---\n\nThis is the R Markdown file for project 5.\n\nGroup members: Travis Cox, Lola Shonaike, and Adam Humphrey\n\nData source: https://app.enigma.io/search/source/org.un.comtrade\n\n##Summary of data\n\n\n###Here is a summary of the data that we are using.\n```{r}\nsource(\"../01 Data/CrosstabData.R\", echo = TRUE)\n```\n\n\n",
+    "created" : 1428882255350.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3465407821",
+    "id" : "FD3EE51F",
+    "lastKnownWriteTime" : 1428882232,
+    "path" : "C:/Users/Travis Cox/DataVisualization/Project5/00 Doc/Project5Rmd.Rmd",
+    "project_path" : "00 Doc/Project5Rmd.Rmd",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}

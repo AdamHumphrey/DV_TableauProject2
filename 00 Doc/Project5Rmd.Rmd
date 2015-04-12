@@ -1,0 +1,20 @@
+---
+title: "Project 3 RMD File"
+output: html_document
+---
+
+This is the R Markdown file for project 5.
+
+Group members: Travis Cox, Lola Shonaike, and Adam Humphrey
+
+Data source: https://app.enigma.io/search/source/org.un.comtrade
+
+##Summary of data
+
+
+###Here is a summary of the data that we are using.
+```{r}
+source("../01 Data/CrosstabData.R", echo = TRUE)
+```
+
+
