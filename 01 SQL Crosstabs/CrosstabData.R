@@ -30,15 +30,23 @@ order by 1,2"
 ')),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_das3734', PASS='orcl_das3734', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE))); tbl_df(df)
 
 df <- data.frame(fromJSON(getURL(URLencode(gsub("\n", " ", '129.152.144.84:5001/rest/native/?query=
-"select empno, deptno, sal, nth_value(max_sal, 2) 
-OVER (PARTITION BY deptno order by sal
+"select AMMO_COUNTRY_AREA, AMMO_YEAR, sal, nth_value(max_sal, 2) 
+OVER (PARTITION BY AMMO_YEAR order by sal
 rows between unbounded preceding and unbounded following) max_sal
 from
-(SELECT empno, deptno, sal, max(sal)
+(SELECT AMMO_COUNTRY_AREA, deptno, sal, max(sal)
 OVER (PARTITION BY deptno order by sal) max_sal 
-FROM emp) 
+FROM AMMO_REVISED) 
 order by 2,3 desc"
 ')),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_das3734', PASS='orcl_das3734', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE))); tbl_df(df)
+
+# Nth Value with correct SQL from SQL Developer
+df <- data.frame(fromJSON(getURL(URLencode(gsub("\n", " ", '129.152.144.84:5001/rest/native/?query=
+"SELECT AMMO_COUNTRY_AREA, AMMO_YEAR, AMMO_QUANTITY, nth_value(AMMO_QUANTITY, 2)
+OVER (PARTITION BY AMMO_YEAR) max_AMMO_QUANTITY 
+FROM AMMO_REVISED
+order by 2,3 desc"
+')),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521/PDB1.usuniversi01134.oraclecloud.internal', USER='C##cs329e_das3734', PASS='orcl_das3734', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE))); tbl_df(df)
 
 df <- data.frame(fromJSON(getURL(URLencode(gsub("\n", " ", '129.152.144.84:5001/rest/native/?query=
 "select distinct ammo_comm_code, ammo_commodity, ammo_flow, sum_trade, cume_dist() 
