@@ -15,7 +15,7 @@ TRADE_SUM from AIRCRAFT_REVISED) ORDER BY CAST(AIRFCRAFT_QUANTITY AS INT),2 ASC"
 
 
 df <- data.frame(fromJSON(getURL(URLencode(gsub("\n", " ", '129.152.144.84:5001/rest/native/?query=
-"select AL_COUNTRY_AREA, al_flow, last_value(sal_sum) OVER (PARTITION BY al_flow, al_country_area 
+"select distinct AL_COUNTRY_AREA, al_flow, last_value(sal_sum) OVER (PARTITION BY al_flow, al_country_area 
 ORDER BY al_trade_usd rows between unbounded preceding and unbounded following) sal_sum, last_value(max_sal) 
 OVER (PARTITION BY AL_COUNTRY_AREA, al_flow order by al_trade_usd
 rows between unbounded preceding and unbounded following) max_sal, sal_sum - last_value(max_sal) 
@@ -41,11 +41,11 @@ order by 2,3 desc"
 ')),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_das3734', PASS='orcl_das3734', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE))); tbl_df(df)
 
 df <- data.frame(fromJSON(getURL(URLencode(gsub("\n", " ", '129.152.144.84:5001/rest/native/?query=
-"select empno, deptno, sal, cume_dist() 
-OVER (PARTITION BY deptno order by sal) cume_dist
+"select distinct ammo_comm_code, ammo_commodity, ammo_flow, sum_trade, cume_dist() 
+OVER (Partition By ammo_comm_code order by sum_trade) cume_dist
 from
-(SELECT empno, deptno, sal, max(sal)
-OVER (PARTITION BY deptno order by sal) max_sal 
-FROM emp) 
-order by 2,3 desc"
+(SELECT ammo_comm_code, ammo_commodity, ammo_flow, sum(ammo_trade_usd)
+OVER (PARTITION BY ammo_commodity order by ammo_flow) sum_trade 
+FROM ammo_revised) 
+order by 1,3,4;"
 ')),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_das3734', PASS='orcl_das3734', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE))); tbl_df(df)
