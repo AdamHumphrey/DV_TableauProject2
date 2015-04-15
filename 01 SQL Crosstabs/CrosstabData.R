@@ -42,11 +42,14 @@ order by 2,3 desc"
 
 # Nth Value with correct SQL from SQL Developer
 df <- data.frame(fromJSON(getURL(URLencode(gsub("\n", " ", '129.152.144.84:5001/rest/native/?query=
-"SELECT AMMO_COUNTRY_AREA, AMMO_YEAR, AMMO_QUANTITY, nth_value(AMMO_QUANTITY, 2)
-OVER (PARTITION BY AMMO_YEAR) max_AMMO_QUANTITY 
-FROM AMMO_REVISED
-order by 2,3 desc"
-')),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521/PDB1.usuniversi01134.oraclecloud.internal', USER='C##cs329e_das3734', PASS='orcl_das3734', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE))); tbl_df(df)
+"SELECT sum_ammo, ammo_country_area, max_ammo_quantity 
+FROM (select distinct ammo_country_area, sum_ammo, NTH_VALUE(sum_ammo,192)
+over (order by sum_ammo ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) max_AMMO_QUANTITY 
+from (select distinct ammo_country_area, sum(ammo_quantity) 
+Over (Partition by ammo_country_area) sum_ammo 
+from AMMO_REVISED)) order by 1"
+')),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_das3734', PASS='orcl_das3734', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE))); tbl_df(df)
+
 
 df <- data.frame(fromJSON(getURL(URLencode(gsub("\n", " ", '129.152.144.84:5001/rest/native/?query=
 "select distinct ammo_comm_code, ammo_commodity, ammo_flow, sum_trade, cume_dist() 
