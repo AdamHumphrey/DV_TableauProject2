@@ -606,7 +606,7 @@
         <calculation class='tableau' formula='MAX(ZN([AL_TRADE_USD]) )' scope-isolation='false' />
       </column>
       <column caption='Nth Quantity' datatype='real' name='[Calculation_6890414000953064]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='WINDOW_MAX(SUM([AMMO_QUANTITY]), FIRST(), LAST()-1 )' scope-isolation='false'>
+        <calculation class='tableau' formula='WINDOW_MAX(SUM([AMMO_QUANTITY]), FIRST(), LAST()-[Parameters].[Parameter 1] )' scope-isolation='false'>
           <table-calc ordering-type='Rows' />
         </calculation>
       </column>
@@ -619,6 +619,11 @@
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
       </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Nth' datatype='integer' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='3'>
+          <calculation class='tableau' formula='3' />
+        </column>
+      </datasource-dependencies>
     </datasource>
   </datasources>
   <worksheets>
@@ -863,6 +868,7 @@
         <view>
           <datasources>
             <datasource caption='AIRCRAFT_REVISED+ (C##CS329E_DAS3734)' name='oracle.42106.767916469908' />
+            <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='oracle.42106.767916469908'>
             <column caption='Ammo Country Area' datatype='string' name='[AMMO_COUNTRY_AREA]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal'>
@@ -872,7 +878,7 @@
             <column caption='Ammo Year' datatype='real' name='[AMMO_YEAR]' role='dimension' type='ordinal'>
             </column>
             <column caption='Nth Quantity' datatype='real' name='[Calculation_6890414000953064]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='WINDOW_MAX(SUM([AMMO_QUANTITY]), FIRST(), LAST()-1 )' scope-isolation='false'>
+              <calculation class='tableau' formula='WINDOW_MAX(SUM([AMMO_QUANTITY]), FIRST(), LAST()-[Parameters].[Parameter 1] )' scope-isolation='false'>
                 <table-calc ordering-type='Rows' />
               </calculation>
             </column>
@@ -975,7 +981,7 @@
       <viewpoint>
       </viewpoint>
     </window>
-    <window auto-hidden='0' class='worksheet' maximized='0' name='nth_value'>
+    <window auto-hidden='0' class='worksheet' maximized='1' name='nth_value'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1006,10 +1012,8 @@
           <field>[oracle.42106.767916469908].[none:AMMO_YEAR:qk]</field>
         </color-one-way>
       </highlight>
-      <viewpoint>
-      </viewpoint>
     </window>
-    <window auto-hidden='0' class='worksheet' maximized='1' name='Cume Dist'>
+    <window auto-hidden='0' class='worksheet' maximized='0' name='Cume Dist'>
       <cards>
         <edge name='left'>
           <strip size='160'>

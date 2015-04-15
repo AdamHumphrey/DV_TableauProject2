@@ -55,5 +55,5 @@ from
 (SELECT ammo_comm_code, ammo_commodity, ammo_flow, sum(ammo_trade_usd)
 OVER (PARTITION BY ammo_commodity order by ammo_flow) sum_trade 
 FROM ammo_revised) 
-order by 1,3,4;"
+order by 1,3,4"
 ')),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_das3734', PASS='orcl_das3734', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE))); tbl_df(df)
