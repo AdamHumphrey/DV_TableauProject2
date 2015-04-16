@@ -11,10 +11,29 @@ Data source: https://app.enigma.io/search/source/org.un.comtrade
 
 ##Summary of data
 
+For this assignment, we had to produce the following Crosstabs in R and Tableau of rank(), last_value/ maxvalue and difference, nth value, and cume_dist.
+For the data, we chose to use Aircraft, Article Leather, and Ammunation data. We wanted to observe different patterns with trade and commerce. 
 
-###Here is a summary of the data that we are using.
+#1 RANK()
+For rank, we chose to see which Aircraft_comm_codes(type of aircraft) had an effect on Aircraft Quantity. We first sorted it by Aircraft quantity, then calculated the sum of the number of each type of aircraft. We ranked this to easily see which types of aircrafts were the best, without the hassle of going through the sum. 
+
+
+#2 MAX VALUE AND DIFFERENCE
+
+ For Max Value and Difference, we chose to view Max Value and differences for all import/export trades for each country. It was interesting to view how various countries would have small differences and some large. Also, it seemed that countries had a small export difference and a large import difference.
+
+#3 Nth Value
+
+For nth value, we chose to look at Ammo Quantity vs AmmoCountry Area, as you can see below, the average number is the same. 
+
+ #4 Cume_dist
+ 
+ For Cume_dist, we chose to look at the Ammo flow of the different types of ammo, then take the percentage of the total running sum of ammo trade usd along ammo flow. By doing this, one could analyze correlations between the type of ammo and how it affects various types of ammo flow such as export, import, re-export, etc.  Across all types of ammo, reimport was 100% and export seemed to consistently low. From this one can conclude, it is more popular to import weapons than to export weapons. 
+###Here is a illustration of the data that we are using.
+   For ease of access and understanding, all the steps in R to reproduce the visualization can be viewed below. 
+ 
 ```{r}
-source("../01 Data/CrosstabData.R", echo = TRUE)
+source("../01 SQL Crosstabs/CrosstabData.R", echo = TRUE)
 ```
 
 
